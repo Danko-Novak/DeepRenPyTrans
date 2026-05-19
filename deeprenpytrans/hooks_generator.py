@@ -40,7 +40,10 @@ init -1 python:
         def _load(self):
             try:
                 with renpy.file("tl/{lang_dir}/dictionary.json") as f:
-                    self.translations = json.load(f)
+                    content = f.read()
+                    if isinstance(content, bytes):
+                        content = content.decode("utf-8")
+                    self.translations = json.loads(content)
             except Exception:
                 pass
 
@@ -67,10 +70,14 @@ init 5 python:
     import codecs
 
     # Logger for strings not found in dictionary
-    _untranslated_log_path = os.path.join(config.basedir, "game", "untranslated.log")
+    _untranslated_log_path = None
+    if getattr(config, "basedir", None):
+        _untranslated_log_path = os.path.join(config.basedir, "game", "untranslated.log")
     _logged_untranslated = set()
 
     def _log_untranslated(text):
+        if not _untranslated_log_path:
+            return
         if not text or not isinstance(text, str):
             return
         if text in _logged_untranslated:
@@ -99,12 +106,14 @@ init 5 python:
 
     # Font overrides for target language
     if _preferences.language == "{lang_dir}":
-        gui.text_font = "{default_font}"
-        gui.name_text_font = "{default_font}"
-        gui.interface_text_font = "{default_font}"
-        gui.button_text_font = "{default_font}"
-        gui.choice_button_text_font = "{default_font}"
-        style.default.font = "{default_font}"
+        _font_to_use = "{default_font}"
+        if renpy.exists(_font_to_use):
+            gui.text_font = _font_to_use
+            gui.name_text_font = _font_to_use
+            gui.interface_text_font = _font_to_use
+            gui.button_text_font = _font_to_use
+            gui.choice_button_text_font = _font_to_use
+            style.default.font = _font_to_use
 {font_replacements}
 '''
 
@@ -135,7 +144,8 @@ def generate_hooks(
     font_lines = ""
     if font_replacements:
         for original, replacement in font_replacements.items():
-            font_lines += f'        config.font_replacement_map["{original}"] = ("{replacement}", False, False)\n'
+            font_lines += f'        if renpy.exists("{replacement}"):\n'
+            font_lines += f'            config.font_replacement_map["{original}"] = ("{replacement}", False, False)\n'
 
     content = HOOKS_TEMPLATE.format(
         lang_dir=lang_dir,
