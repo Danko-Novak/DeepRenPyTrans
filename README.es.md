@@ -229,14 +229,34 @@ OPENAI_API_KEY=sk-tu-clave-openai-aqui
 - Integración de nuevos proveedores de LLM.
 - Soporte y pruebas para idiomas CJK (chino, japonés, coreano).
 - Mejora de los heurísticos de extracción de texto para juegos complejos.
-- Desarrollo de una interfaz gráfica de usuario (GUI).
+
+## 🗺️ Hoja de Ruta y Funciones
+
+Realizamos el seguimiento del desarrollo, planeamos nuevas funciones y priorizamos las tareas en función de los comentarios de la comunidad. Si tienes una idea o deseas solicitar una función, ve a la pestaña **Discussions** (Debates) en GitHub, envía tu propuesta o vota por las ideas existentes.
+
+| Función | Votos | Estado | Progreso |
+| :--- | :--- | :--- | :--- |
+| **Consola Web GUI (Dashboard)** | - | 🚀 Lanzado | `[████████████████████]` 100% |
+| **Empaquetador y Optimizador de APK** | - | 🚀 Lanzado | `[████████████████████]` 100% |
+| **Soporte para LLMs Locales y Ollama** | - | 🚀 Lanzado | `[████████████████████]` 100% |
+| **Soporte para macOS y Linux** | 0 | 📋 Planificado | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Auditorías de Traducción CJK** | 0 | 📋 Planificado | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
+
+---
 
 ## 💖 Apoya el Proyecto
 
-Si esta herramienta te ha ahorrado horas de trabajo de traducción, compresión y compilación de APKs, ¡considera apoyar al autor!
+DeepRenPyTrans es un proyecto impulsado por la pasión para simplificar el proceso de traducción de novelas visuales. Si esta herramienta te ha ahorrado tiempo o te ha ayudado a llevar un juego a una nueva audiencia, considera apoyar su desarrollo.
 
-Puedes enviar USDT (Red TON) a esta dirección de monedero de Telegram:
-`UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
+**Objetivo de Hardware:** Actualmente estoy ahorrando para actualizar mi estación de trabajo a una tarjeta gráfica **AMD Radeon 9070xt**. Esta actualización es esencial para probar y optimizar el soporte para **LLMs locales**, lo que mejorará significativamente la calidad y velocidad de traducción para todos.
+
+**Fondo Actual:** 0 / 2,000 USD
+
+### Cómo ayudar:
+* **Dar una estrella al repositorio (Star):** ¡Ayuda a la visibilidad del proyecto y me motiva a seguir programando!
+* **Contribute:** Reporta errores, sugiere funciones o envía un PR.
+* **Donar (USDT - TON / Red TON):**
+  `UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
 
 ## 📄 Licencia
 

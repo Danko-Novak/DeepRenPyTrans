@@ -230,14 +230,34 @@ Les contributions sont les bienvenues ! Domaines qui ont besoin d'aide :
 - Intégration de fournisseurs de LLM supplémentaires.
 - Prise en charge et tests pour les langues CJK (chinois, japonais, coréen).
 - Amélioration des heuristiques d'extraction pour certains jeux spécifiques.
-- Création d'une interface graphique (GUI).
+
+## 🗺️ Feuille de Route et Fonctionnalités
+
+Nous suivons notre développement, planifions de nouvelles fonctionnalités et priorisons les tâches en fonction des retours de la communauté. Si vous avez une idée ou souhaitez demander une fonctionnalité, rendez-vous dans l'onglet **Discussions** sur GitHub, soumettez votre proposition ou votez pour les idées existantes !
+
+| Fonctionnalité | Votes | Statut | Progression |
+| :--- | :--- | :--- | :--- |
+| **Console Web GUI (Tableau de Bord)** | - | 🚀 Publié | `[████████████████████]` 100% |
+| **Optimisateur et Assembleur d'APK** | - | 🚀 Publié | `[████████████████████]` 100% |
+| **Prise en Charge des LLM Locaux et d'Ollama** | - | 🚀 Publié | `[████████████████████]` 100% |
+| **Prise en Charge de macOS et Linux** | 0 | 📋 Planifié | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Audits de Traduction Japonaise/Chinoise** | 0 | 📋 Planifié | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
+
+---
 
 ## 💖 Soutenir le Projet
 
-Si cet outil vous a fait gagner des heures de travail de traduction, de compression ou de build d'APK, pensez à soutenir l'auteur !
+DeepRenPyTrans est un projet passionné conçu pour simplifier le processus de traduction de visual novels. Si cet outil vous a fait gagner du temps ou vous a aidé à proposer un jeu à un nouveau public, pensez à soutenir son développement.
 
-Vous pouvez envoyer des USDT (Réseau TON) à cette adresse de portefeuille Telegram :
-`UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
+**Objectif Matériel :** Je mets actuellement de l'argent de côté pour mettre à jour ma station de travail avec une carte graphique **AMD Radeon 9070xt**. Cette mise à niveau est essentielle pour tester et optimiser la prise en charge des **LLM locaux**, ce qui améliorera considérablement la qualité et la vitesse de traduction pour tout le monde.
+
+**Cagnotte Actuelle :** 0 / 2 000 USD
+
+### Comment aider :
+* **Ajouter une étoile au dépôt (Star) :** Cela aide à la visibilité et me motive à continuer de coder !
+* **Contribuer :** Signalez des bugs, proposez des fonctionnalités ou soumettez des PR.
+* **Faire un don (USDT - TON / Réseau TON) :**
+  `UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
 
 ## 📄 Licence
 

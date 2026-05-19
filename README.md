@@ -232,14 +232,34 @@ PRs welcome! Areas that need help:
 - Additional LLM provider integrations
 - CJK language support and testing
 - Improved extraction heuristics for specific games
-- GUI wrapper
+
+## 🗺️ Roadmap & Features
+
+We track our development, plan new features, and prioritize tasks based on community feedback. If you have an idea or want to request a feature, please go to the **Discussions** tab on GitHub, submit your proposal, or upvote existing ideas!
+
+| Feature | Votes | Status | Progress |
+| :--- | :--- | :--- | :--- |
+| **GUI Web Console (Dashboard)** | - | 🚀 Released | `[████████████████████]` 100% |
+| **Android APK Packer & Optimizer** | - | 🚀 Released | `[████████████████████]` 100% |
+| **Local LLMs & Ollama Support** | - | 🚀 Released | `[████████████████████]` 100% |
+| **macOS & Linux Support** | 0 | 📋 Planned | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Japanese/Chinese Translation Audits** | 0 | 📋 Planned | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
+
+---
 
 ## 💖 Support the Project
 
-If this tool has saved you hours of translation, compression, and build work, please consider supporting the author!
+DeepRenPyTrans is a passion project built to streamline the VN translation process. If this tool has saved you time or helped you bring a game to a new audience, consider supporting its development.
 
-You can send USDT (TON Network) to this Telegram wallet address:
-`UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
+**Hardware Goal:** I am currently saving up to upgrade my workstation to an **AMD Radeon 9070xt**. This upgrade is essential for testing and optimizing support for **local LLMs**, which will significantly improve translation quality and speed for everyone.
+
+**Current Fund:** 0 / 2,000 USD
+
+### How to help:
+* **Star the repo:** It helps with visibility and motivates me to keep coding!
+* **Contribute:** Open issues, suggest features, or submit PRs.
+* **Donate (USDT - TON / TON Network):**
+  `UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
 
 ## 📄 License
 

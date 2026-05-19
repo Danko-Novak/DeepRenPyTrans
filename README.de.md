@@ -230,14 +230,34 @@ Beiträge sind gerne gesehen! Bereiche, die Hilfe benötigen:
 - Integration zusätzlicher LLM-Provider.
 - Unterstützung und Testen von CJK-Sprachen (Chinesisch, Japanisch, Koreanisch).
 - Verbesserte Extraktionsheuristiken für spezifische Spiele.
-- Grafische Benutzeroberfläche (GUI).
+
+## 🗺️ Roadmap & Funktionen
+
+Wir verfolgen unsere Entwicklung, planen neue Funktionen und priorisieren Aufgaben basierend auf dem Feedback der Community. Wenn Sie eine Idee haben oder ein Feature anfordern möchten, besuchen Sie bitte den Tab **Discussions** (Diskussionen) auf GitHub, reichen Sie Ihren Vorschlag ein oder stimmen Sie für bestehende Ideen ab!
+
+| Funktion | Stimmen | Status | Fortschritt |
+| :--- | :--- | :--- | :--- |
+| **Web-GUI-Konsole (Dashboard)** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
+| **Android APK Packer & Optimierer** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
+| **Lokale LLMs & Ollama-Unterstützung** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
+| **macOS- & Linux-Unterstützung** | 0 | 📋 Geplant | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Übersetzungsprüfungen für Japanisch/Chinesisch** | 0 | 📋 Geplant | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
+
+---
 
 ## 💖 Projekt unterstützen
 
-Wenn Ihnen dieses Tool Stunden an Übersetzungs-, Kompressions- und Build-Arbeit erspart hat, freuen wir uns über Ihre Unterstützung!
+DeepRenPyTrans ist ein Herzensprojekt, das entwickelt wurde, um den Übersetzungsprozess von Visual Novels zu rationalisieren. Wenn dieses Tool Ihnen Zeit gespart oder geholfen hat, ein Spiel einem neuen Publikum zugänglich zu machen, ziehen Sie bitte eine Unterstützung seiner Entwicklung in Betracht.
 
-Sie können USDT (TON-Netzwerk) an diese Telegram-Wallet-Adresse senden:
-`UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
+**Hardware-Ziel:** Ich spare derzeit auf ein Upgrade meiner Workstation auf eine **AMD Radeon 9070xt**. Dieses Upgrade ist unerlässlich, um die Unterstützung für **lokale LLMs** zu testen und zu optimieren, was die Übersetzungsqualität und -geschwindigkeit für alle erheblich verbessern wird.
+
+**Aktueller Spendenstand:** 0 / 2,000 USD
+
+### So können Sie helfen:
+* **Dem Repository einen Stern geben (Star):** Hilft bei der Sichtbarkeit und motiviert mich, weiter zu coden!
+* **Mitwirken:** Erstellen Sie Issues, schlagen Sie Features vor oder senden Sie einen PR.
+* **Spenden (USDT - TON / TON-Netzwerk):**
+  `UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
 
 ## 📄 Lizenz
 

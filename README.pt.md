@@ -229,14 +229,34 @@ Toda contribuição é bem-vinda! Áreas em que você pode ajudar:
 - Integração de novos provedores de LLM.
 - Suporte e testes para idiomas CJK (chinês, japonês, coreano).
 - Melhoria dos heurísticos de extração de texto para jogos complexos.
-- Desenvolvimento de uma interface gráfica de usuário (GUI).
+
+## 🗺️ Cronograma e Recursos
+
+Acompanhamos o nosso desenvolvimento, planejamos novos recursos e priorizamos as tarefas com base no feedback da comunidade. Se você tiver uma ideia ou quiser solicitar um recurso, acesse a aba **Discussions** (Discussões) no GitHub, envie sua proposta ou vote nas ideias existentes!
+
+| Recurso | Votos | Status | Progresso |
+| :--- | :--- | :--- | :--- |
+| **Console Web GUI (Dashboard)** | - | 🚀 Lançado | `[████████████████████]` 100% |
+| **Empacotador e Otimizador de APK** | - | 🚀 Lançado | `[████████████████████]` 100% |
+| **Suporte a LLMs Locais e Ollama** | - | 🚀 Lançado | `[████████████████████]` 100% |
+| **Suporte para macOS e Linux** | 0 | 📋 Planejado | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Auditoria de Tradução CJK** | 0 | 📋 Planejado | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
+
+---
 
 ## 💖 Apoie o Projeto
 
-Se esta ferramenta economizou horas de trabalho de tradução, compactação e compilação de APKs, considere apoiar o autor!
+O DeepRenPyTrans é um projeto desenvolvido com paixão para simplificar o processo de tradução de novelas visuais. Se esta ferramenta economizou seu tempo ou ajudou a levar um jogo para um novo público, considere apoiar seu desenvolvimento.
 
-Você pode enviar USDT (Rede TON) para este endereço de carteira do Telegram:
-`UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
+**Meta de Hardware:** Atualmente estou economizando para atualizar minha estação de trabalho para uma placa de vídeo **AMD Radeon 9070xt**. Essa atualização é essencial para testar e otimizar o suporte para **LLMs locais**, o que melhorará significativamente a qualidade e a velocidade da tradução para todos.
+
+**Fundo Atual:** 0 / 2,000 USD
+
+### Como ajudar:
+* **Dar uma estrela no repositório (Star):** Ajuda na visibilidade do projeto e me motiva a continuar programando!
+* **Contribuir:** Abra issues, sugira recursos ou envie um PR.
+* **Doar (USDT - TON / Rede TON):**
+  `UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
 
 ## 📄 Licencia
 
