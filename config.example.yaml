@@ -1,0 +1,72 @@
+# Example configuration for DeepRenPyTrans
+# Copy this file to config.yaml and adjust paths
+
+# Path to your Ren'Py game directory (the one containing .rpy files)
+game_dir: "./MyRenPyGame/game"
+
+# Target translation language
+target_language: "Russian"
+
+# Translation directory name inside game/tl/
+translation_dir: "russian"
+
+# --- AI Provider Settings ---
+api:
+  # Provider: "deepseek", "openai", or "ollama"
+  provider: "deepseek"
+  # Model name (e.g., "deepseek-chat", "deepseek-v4-flash", "deepseek-v4-pro")
+  model: "deepseek-chat"
+  # Lower = more consistent translations
+  temperature: 0.2
+  # Strings per API call (40-50 recommended)
+  batch_size: 40
+  # Max retries per failed batch
+  max_retries: 3
+  # Seconds between batches (rate limiting)
+  delay: 1.0
+
+# --- Font Configuration ---
+fonts:
+  # Fallback font for Cyrillic/CJK/etc. (must support target language)
+  default: "DejaVuSans.ttf"
+  # Map original game fonts → replacement fonts
+  replacements:
+    # "OriginalFont.ttf": "ReplacementFont.ttf"
+
+# --- Extraction Filters ---
+extraction:
+  # Prefixed IDs to always skip (game-specific internal prefixes)
+  skip_prefixes:
+    - "ITM"
+    - "ACT"
+    - "SSID"
+    - "QST"
+    - "LID"
+    - "SEID"
+    - "SUID"
+    - "LOC"
+    - "GUI"
+    - "VID"
+    - "AE"
+    - "JOB"
+    - "DIA"
+    - "SBP"
+    - "GID"
+
+  # Exact strings to force-include even if filters would skip them
+  force_include:
+    - "Q.Save"
+    - "Q.Load"
+
+  # Exact strings to always exclude
+  force_exclude: []
+
+  # Minimum string length (strings shorter than this are skipped, except punctuation)
+  min_length: 2
+
+# --- Hooks Generation ---
+hooks:
+  # Hotkey to toggle translation on/off at runtime
+  toggle_hotkey: "l"
+  # Auto-set language on first run
+  auto_set_language: true
