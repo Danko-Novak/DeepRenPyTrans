@@ -1,0 +1,30 @@
+# Environment
+.env
+config.yaml
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Output
+*.log
+strings_by_file.json
+
+# Build
+dist/
+build/
+*.egg-info/
