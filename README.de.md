@@ -249,9 +249,15 @@ Wir verfolgen unsere Entwicklung, planen neue Funktionen und priorisieren Aufgab
 
 DeepRenPyTrans ist ein Herzensprojekt, das entwickelt wurde, um den Übersetzungsprozess von Visual Novels zu rationalisieren. Wenn dieses Tool Ihnen Zeit gespart oder geholfen hat, ein Spiel einem neuen Publikum zugänglich zu machen, ziehen Sie bitte eine Unterstützung seiner Entwicklung in Betracht.
 
-**Hardware-Ziel:** Ich spare derzeit auf ein Upgrade meiner Workstation auf eine **AMD Radeon 9070xt**. Dieses Upgrade ist unerlässlich, um die Unterstützung für **lokale LLMs** zu testen und zu optimieren, was die Übersetzungsqualität und -geschwindigkeit für alle erheblich verbessern wird.
+Ich arbeite derzeit mit einer einfachen Entwicklungsstation und möchte diese zu einer dedizierten lokalen KI-Workstation unter Linux mit ROCm aufrüsten. Dies ermöglicht native Hochgeschwindigkeitstests von lokalen LLMs.
 
-**Aktueller Spendenstand:** 0 / 2,000 USD
+**Aktueller Spendenstand:** 0 / 1.200 USD
+
+### 🚀 Upgrade-Stufen:
+* **Stufe 1: GPU-Upgrade ($850)** — Upgrade auf eine 24-GB-AMD-Radeon-GPU (z. B. RX 7900 XTX oder ein entsprechendes Modell der nächsten Generation), um große lokale LLMs (wie 14B/32B/70B-Modelle) lokal unter Linux ROCm auszuführen.
+* **Stufe 2: Speicher-Upgrade ($150)** — Upgrade auf eine schnelle 2-TB-PCIe-4.0-NVMe-SSD. Lokale LLM-Modelle benötigen enormen Speicherplatz (5 GB bis 40 GB+ pro Modell), und meine aktuelle 500-GB-SSD ist voll.
+* **Stufe 3: RAM-Upgrade ($150)** — Hinzufügen von weiteren 32 GB RAM (Upgrade auf insgesamt 64 GB) für parallele Workflows, intensives IDE-Multitasking und CPU-Auslagerung für besonders große Modelle.
+* **Laufende Kosten: API-Fonds ($50)** — Kleines Budget zum Testen kommerzieller APIs (DeepSeek, OpenAI, Claude) während der Übersetzungstests.
 
 ### So können Sie helfen:
 * **Dem Repository einen Stern geben (Star):** Hilft bei der Sichtbarkeit und motiviert mich, weiter zu coden!

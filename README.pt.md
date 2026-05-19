@@ -248,9 +248,15 @@ Acompanhamos o nosso desenvolvimento, planejamos novos recursos e priorizamos as
 
 O DeepRenPyTrans é um projeto desenvolvido com paixão para simplificar o processo de tradução de novelas visuais. Se esta ferramenta economizou seu tempo ou ajudou a levar um jogo para um novo público, considere apoiar seu desenvolvimento.
 
-**Meta de Hardware:** Atualmente estou economizando para atualizar minha estação de trabalho para uma placa de vídeo **AMD Radeon 9070xt**. Essa atualização é essencial para testar e otimizar o suporte para **LLMs locais**, o que melhorará significativamente a qualidade e a velocidade da tradução para todos.
+Atualmente estou usando uma estação de desenvolvimento básica e pretendo atualizá-la para uma estação de trabalho dedicada a IA local executando Linux com ROCm. Isso permitirá testes nativos e em alta velocidade de LLMs locais.
 
-**Fundo Atual:** 0 / 2,000 USD
+**Meta de Arrecadação:** 0 / 1.200 USD
+
+### 🚀 Tiers de Upgrade:
+* **Tier 1: Upgrade de GPU ($850)** — Compra de uma GPU AMD Radeon de 24GB (ex: RX 7900 XTX ou equivalente da próxima geração) para rodar localmente LLMs grandes (como modelos 14B/32B/70B) sob Linux ROCm.
+* **Tier 2: Upgrade de Armazenamento ($150)** — Upgrade para um SSD NVMe PCIe 4.0 rápido de 2TB. Os modelos LLM locais exigem muito espaço em disco (de 5GB a mais de 40GB+ por modelo), e meu SSD atual de 500GB está cheio.
+* **Tier 3: Upgrade de RAM ($150)** — Adicionar mais 32GB de RAM (para um total de 64GB) para permitir fluxos de trabalho paralelos, multitarefa intensiva em IDE e descarregamento de modelos no CPU.
+* **Gastos recorrentes: Fundo de API ($50)** — Pequeno orçamento para testar APIs comerciais (DeepSeek, OpenAI, Claude) durante os testes de tradução.
 
 ### Como ajudar:
 * **Dar uma estrela no repositório (Star):** Ajuda na visibilidade do projeto e me motiva a continuar programando!

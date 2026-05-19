@@ -249,9 +249,15 @@ Nous suivons notre développement, planifions de nouvelles fonctionnalités et p
 
 DeepRenPyTrans est un projet passionné conçu pour simplifier le processus de traduction de visual novels. Si cet outil vous a fait gagner du temps ou vous a aidé à proposer un jeu à un nouveau public, pensez à soutenir son développement.
 
-**Objectif Matériel :** Je mets actuellement de l'argent de côté pour mettre à jour ma station de travail avec une carte graphique **AMD Radeon 9070xt**. Cette mise à niveau est essentielle pour tester et optimiser la prise en charge des **LLM locaux**, ce qui améliorera considérablement la qualité et la vitesse de traduction pour tout le monde.
+J'utilise actuellement une station de développement d'entrée de gamme et je souhaite la faire évoluer vers une station de travail dédiée à l'IA locale sous Linux avec ROCm. Cela permettra d'effectuer des tests natifs à haute vitesse des LLM locaux.
 
-**Cagnotte Actuelle :** 0 / 2 000 USD
+**Cagnotte Actuelle :** 0 / 1 200 USD
+
+### 🚀 Paliers d'Évolution :
+* **Palier 1 : Mise à niveau du GPU ($850)** — Achat d'un GPU AMD Radeon de 24 Go (par exemple, RX 7900 XTX ou équivalent de nouvelle génération) pour exécuter localement des modèles LLM volumineux (tels que 14B/32B/70B) sous Linux ROCm.
+* **Palier 2 : Mise à niveau du stockage ($150)** — Passage à un SSD NVMe PCIe 4.0 rapide de 2 To. Les modèles LLM locaux nécessitent un espace disque important (de 5 Go à plus de 40 Go par modèle), et mon SSD actuel de 500 Go est saturé.
+* **Palier 3 : Mise à niveau de la RAM ($150)** — Ajout de 32 Go de RAM supplémentaires (pour atteindre 64 Go au total) pour permettre des flux de travail parallèles, un multitâche intensif sur l'IDE et la décharge de modèles sur le processeur.
+* **Dépenses courantes : Budget API ($50)** — Petit budget pour tester les API payantes (DeepSeek, OpenAI, Claude) lors de la validation des traductions.
 
 ### Comment aider :
 * **Ajouter une étoile au dépôt (Star) :** Cela aide à la visibilité et me motive à continuer de coder !

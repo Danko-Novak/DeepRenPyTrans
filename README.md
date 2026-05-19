@@ -251,9 +251,15 @@ We track our development, plan new features, and prioritize tasks based on commu
 
 DeepRenPyTrans is a passion project built to streamline the VN translation process. If this tool has saved you time or helped you bring a game to a new audience, consider supporting its development.
 
-**Hardware Goal:** I am currently saving up to upgrade my workstation to an **AMD Radeon 9070xt**. This upgrade is essential for testing and optimizing support for **local LLMs**, which will significantly improve translation quality and speed for everyone.
+I am currently running a budget development station and aiming to upgrade it to a dedicated local AI workstation running Linux with ROCm. This will allow native, high-speed testing of local LLMs.
 
-**Current Fund:** 0 / 2,000 USD
+**Current Fund Target:** 0 / 1,200 USD
+
+### 🚀 Upgrade Tiers:
+* **Tier 1: GPU Upgrade ($850)** — Upgrade to a 24GB AMD Radeon GPU (e.g., RX 7900 XTX or next-gen equivalent) for running large local LLMs (like 14B/32B/70B models) locally under Linux ROCm.
+* **Tier 2: Storage Upgrade ($150)** — Upgrade to a fast 2TB PCIe 4.0 NVMe SSD. Local LLM models require huge disk space (5GB to 40GB+ per model), and my current 500GB SSD is full.
+* **Tier 3: RAM Upgrade ($150)** — Add another 32GB of RAM (upgrading to 64GB total) to allow parallel workflows, heavy IDE multitasking, and CPU-offloading for extra large models.
+* **Ongoing: API Fund ($50)** — Small budget for testing commercial APIs (DeepSeek, OpenAI, Claude) during translation testing.
 
 ### How to help:
 * **Star the repo:** It helps with visibility and motivates me to keep coding!

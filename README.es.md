@@ -248,13 +248,19 @@ Realizamos el seguimiento del desarrollo, planeamos nuevas funciones y priorizam
 
 DeepRenPyTrans es un proyecto impulsado por la pasión para simplificar el proceso de traducción de novelas visuales. Si esta herramienta te ha ahorrado tiempo o te ha ayudado a llevar un juego a una nueva audiencia, considera apoyar su desarrollo.
 
-**Objetivo de Hardware:** Actualmente estoy ahorrando para actualizar mi estación de trabajo a una tarjeta gráfica **AMD Radeon 9070xt**. Esta actualización es esencial para probar y optimizar el soporte para **LLMs locales**, lo que mejorará significativamente la calidad y velocidad de traducción para todos.
+Actualmente estoy utilizando una estación de desarrollo básica y mi objetivo es actualizarla a una estación de trabajo de IA local dedicada que funcione con Linux y ROCm. Esto permitirá realizar pruebas nativas y a alta velocidad de LLMs locales.
 
-**Fondo Actual:** 0 / 2,000 USD
+**Fondo Actual:** 0 / 1,200 USD
+
+### 🚀 Tiers de Actualización:
+* **Tier 1: Actualización de GPU ($850)** — Compra de una GPU AMD Radeon de 24GB (por ejemplo, RX 7900 XTX o equivalente de próxima generación) para ejecutar localmente modelos LLM grandes (como modelos 14B/32B/70B) bajo Linux ROCm.
+* **Tier 2: Actualización de Almacenamiento ($150)** — Instalación de un SSD NVMe PCIe 4.0 rápido de 2TB. Los modelos LLM locales requieren un gran espacio en disco (de 5GB a más de 40GB por modelo), y mi SSD actual de 500GB está lleno.
+* **Tier 3: Actualización de RAM ($150)** — Adición de otros 32GB de RAM (para un total de 64GB) para permitir flujos de trabajo paralelos, multitarea intensiva en el IDE y descarga de modelos en CPU.
+* **Gastos corrientes: Fondo de API ($50)** — Pequeño presupuesto para probar APIs comerciales (DeepSeek, OpenAI, Claude) durante las pruebas de traducción.
 
 ### Cómo ayudar:
 * **Dar una estrella al repositorio (Star):** ¡Ayuda a la visibilidad del proyecto y me motiva a seguir programando!
-* **Contribute:** Reporta errores, sugiere funciones o envía un PR.
+* **Contribuir:** Reporta errores, sugiere funciones o envía un PR.
 * **Donar (USDT - TON / Red TON):**
   `UQBdHUyR8nG5p_Rwhw_Rtmgc7QJdJ-G5nOPJa7Pq0mh2A27K`
 
