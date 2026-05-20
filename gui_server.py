@@ -97,7 +97,14 @@ def write_yaml(data):
 
 
 def read_env():
-    config = {"DEEPSEEK_API_KEY": "", "OPENAI_API_KEY": ""}
+    config = {
+        "DEEPSEEK_API_KEY": "",
+        "OPENAI_API_KEY": "",
+        "OPENROUTER_API_KEY": "",
+        "GROQ_API_KEY": "",
+        "NEBIUS_API_KEY": "",
+        "DEEPINFRA_API_KEY": ""
+    }
     if not os.path.exists(ENV_FILE):
         return config
     try:
@@ -995,6 +1002,10 @@ HTML_CONTENT = """<!DOCTYPE html>
                         <select id="yaml-provider" onchange="updateModelChoices()">
                             <option value="deepseek">DeepSeek</option>
                             <option value="openai">OpenAI</option>
+                            <option value="openrouter">OpenRouter (Aggregator)</option>
+                            <option value="groq">Groq (Ultra Fast)</option>
+                            <option value="nebius">Nebius AI Studio</option>
+                            <option value="deepinfra">DeepInfra</option>
                             <option value="ollama">Ollama (Local)</option>
                         </select>
                     </div>
@@ -1179,6 +1190,28 @@ HTML_CONTENT = """<!DOCTYPE html>
                 { value: 'gpt-4o', label: 'GPT-4o' },
                 { value: 'gpt-3.5-turbo', label: 'GPT-3.5 Turbo' }
             ],
+            openrouter: [
+                { value: 'qwen/qwen-2.5-72b-instruct', label: 'Qwen 2.5 72B (Best for Ru/Zh)' },
+                { value: 'meta-llama/llama-3.3-70b-instruct', label: 'Llama 3.3 70B (High Quality)' },
+                { value: 'meta-llama/llama-3.1-8b-instruct', label: 'Llama 3.1 8B (Ultra Cheap)' },
+                { value: 'deepseek/deepseek-chat', label: 'DeepSeek V3 (via OpenRouter)' },
+                { value: 'google/gemini-flash-1.5', label: 'Gemini 1.5 Flash' }
+            ],
+            groq: [
+                { value: 'llama-3.3-70b-specdec', label: 'Llama 3.3 70B (Fast SpecDec)' },
+                { value: 'llama-3.1-8b-instant', label: 'Llama 3.1 8B (Instant & Cheap)' },
+                { value: 'mixtral-8x7b-32768', label: 'Mixtral 8x7B' }
+            ],
+            nebius: [
+                { value: 'Qwen/Qwen2.5-72B-Instruct', label: 'Qwen 2.5 72B (Studio)' },
+                { value: 'meta-llama/Meta-Llama-3.1-70B-Instruct', label: 'Llama 3.1 70B (Studio)' },
+                { value: 'meta-llama/Meta-Llama-3.1-8B-Instruct', label: 'Llama 3.1 8B (Studio)' }
+            ],
+            deepinfra: [
+                { value: 'Qwen/Qwen2.5-72B-Instruct', label: 'Qwen 2.5 72B' },
+                { value: 'meta-llama/Meta-Llama-3.3-70B-Instruct', label: 'Llama 3.3 70B' },
+                { value: 'meta-llama/Meta-Llama-3.1-8B-Instruct', label: 'Llama 3.1 8B' }
+            ],
             ollama: [
                 { value: 'llama3', label: 'Llama 3' },
                 { value: 'mistral', label: 'Mistral' },
@@ -1226,6 +1259,30 @@ HTML_CONTENT = """<!DOCTYPE html>
             if (selectedModel) {
                 modelSelect.value = selectedModel;
             }
+
+            // Update API Key field dynamically from env config
+            if (currentConfig.env) {
+                const apiKeyMap = {
+                    deepseek: currentConfig.env.DEEPSEEK_API_KEY || '',
+                    openai: currentConfig.env.OPENAI_API_KEY || '',
+                    openrouter: currentConfig.env.OPENROUTER_API_KEY || '',
+                    groq: currentConfig.env.GROQ_API_KEY || '',
+                    nebius: currentConfig.env.NEBIUS_API_KEY || '',
+                    deepinfra: currentConfig.env.DEEPINFRA_API_KEY || '',
+                    ollama: ''
+                };
+                const keyInput = document.getElementById('env-apikey');
+                keyInput.value = apiKeyMap[provider] || '';
+                
+                // Toggle input state
+                if (provider === 'ollama') {
+                    keyInput.placeholder = 'Not required for Ollama';
+                    keyInput.disabled = true;
+                } else {
+                    keyInput.placeholder = 'Paste your API key here...';
+                    keyInput.disabled = false;
+                }
+            }
         }
 
         // Fetch configurations from Python API
@@ -1256,10 +1313,23 @@ HTML_CONTENT = """<!DOCTYPE html>
                 
                 // Env variables
                 const provider = data.yaml.api?.provider || 'deepseek';
-                if (provider === 'deepseek') {
-                    document.getElementById('env-apikey').value = data.env.DEEPSEEK_API_KEY || '';
+                const apiKeyMap = {
+                    deepseek: data.env.DEEPSEEK_API_KEY || '',
+                    openai: data.env.OPENAI_API_KEY || '',
+                    openrouter: data.env.OPENROUTER_API_KEY || '',
+                    groq: data.env.GROQ_API_KEY || '',
+                    nebius: data.env.NEBIUS_API_KEY || '',
+                    deepinfra: data.env.DEEPINFRA_API_KEY || '',
+                    ollama: ''
+                };
+                const keyInput = document.getElementById('env-apikey');
+                keyInput.value = apiKeyMap[provider] || '';
+                if (provider === 'ollama') {
+                    keyInput.placeholder = 'Not required for Ollama';
+                    keyInput.disabled = true;
                 } else {
-                    document.getElementById('env-apikey').value = data.env.OPENAI_API_KEY || '';
+                    keyInput.placeholder = 'Paste your API key here...';
+                    keyInput.disabled = false;
                 }
                 
                 // Bat config values
@@ -1307,8 +1377,16 @@ HTML_CONTENT = """<!DOCTYPE html>
                 const updatedEnv = { ...currentConfig.env };
                 if (provider === 'deepseek') {
                     updatedEnv.DEEPSEEK_API_KEY = apiKey;
-                } else {
+                } else if (provider === 'openai') {
                     updatedEnv.OPENAI_API_KEY = apiKey;
+                } else if (provider === 'openrouter') {
+                    updatedEnv.OPENROUTER_API_KEY = apiKey;
+                } else if (provider === 'groq') {
+                    updatedEnv.GROQ_API_KEY = apiKey;
+                } else if (provider === 'nebius') {
+                    updatedEnv.NEBIUS_API_KEY = apiKey;
+                } else if (provider === 'deepinfra') {
+                    updatedEnv.DEEPINFRA_API_KEY = apiKey;
                 }
 
                 const response = await fetch('/api/config', {

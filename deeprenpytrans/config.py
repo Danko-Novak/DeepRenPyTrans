@@ -49,6 +49,22 @@ PROVIDER_MAP = {
         "env_key": "OPENAI_API_KEY",
         "base_url": "https://api.openai.com/v1/chat/completions",
     },
+    "openrouter": {
+        "env_key": "OPENROUTER_API_KEY",
+        "base_url": "https://openrouter.ai/api/v1/chat/completions",
+    },
+    "groq": {
+        "env_key": "GROQ_API_KEY",
+        "base_url": "https://api.groq.com/openai/v1/chat/completions",
+    },
+    "nebius": {
+        "env_key": "NEBIUS_API_KEY",
+        "base_url": "https://api.studio.nebius.ai/v1/chat/completions",
+    },
+    "deepinfra": {
+        "env_key": "DEEPINFRA_API_KEY",
+        "base_url": "https://api.deepinfra.com/v1/openai/chat/completions",
+    },
     "ollama": {
         "env_key": None,
         "base_url": "http://localhost:11434/v1/chat/completions",

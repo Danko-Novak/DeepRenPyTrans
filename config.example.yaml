@@ -12,9 +12,9 @@ translation_dir: "russian"
 
 # --- AI Provider Settings ---
 api:
-  # Provider: "deepseek", "openai", or "ollama"
+  # Provider: "deepseek", "openai", "openrouter", "groq", "nebius", "deepinfra", or "ollama"
   provider: "deepseek"
-  # Model name (e.g., "deepseek-chat", "deepseek-v4-flash", "deepseek-v4-pro")
+  # Model name (e.g., "deepseek-chat", "gpt-4o-mini", "qwen/qwen-2.5-72b-instruct", "llama-3.1-8b-instant")
   model: "deepseek-chat"
   # Lower = more consistent translations
   temperature: 0.2
