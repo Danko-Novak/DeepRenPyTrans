@@ -65,6 +65,14 @@ PROVIDER_MAP = {
         "env_key": "DEEPINFRA_API_KEY",
         "base_url": "https://api.deepinfra.com/v1/openai/chat/completions",
     },
+    "gemini": {
+        "env_key": "GEMINI_API_KEY",
+        "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/chat/completions",
+    },
+    "dashscope": {
+        "env_key": "DASHSCOPE_API_KEY",
+        "base_url": "https://dashscope-intl.aliyuncs.com/compatible-mode/v1/chat/completions",
+    },
     "ollama": {
         "env_key": None,
         "base_url": "http://localhost:11434/v1/chat/completions",

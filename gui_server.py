@@ -103,7 +103,9 @@ def read_env():
         "OPENROUTER_API_KEY": "",
         "GROQ_API_KEY": "",
         "NEBIUS_API_KEY": "",
-        "DEEPINFRA_API_KEY": ""
+        "DEEPINFRA_API_KEY": "",
+        "GEMINI_API_KEY": "",
+        "DASHSCOPE_API_KEY": ""
     }
     if not os.path.exists(ENV_FILE):
         return config
@@ -1006,6 +1008,8 @@ HTML_CONTENT = """<!DOCTYPE html>
                             <option value="groq">Groq (Ultra Fast)</option>
                             <option value="nebius">Nebius AI Studio</option>
                             <option value="deepinfra">DeepInfra</option>
+                            <option value="gemini">Google Gemini (Direct)</option>
+                            <option value="dashscope">Alibaba DashScope (Qwen Direct)</option>
                             <option value="ollama">Ollama (Local)</option>
                         </select>
                     </div>
@@ -1195,7 +1199,8 @@ HTML_CONTENT = """<!DOCTYPE html>
                 { value: 'meta-llama/llama-3.3-70b-instruct', label: 'Llama 3.3 70B (High Quality)' },
                 { value: 'meta-llama/llama-3.1-8b-instruct', label: 'Llama 3.1 8B (Ultra Cheap)' },
                 { value: 'deepseek/deepseek-chat', label: 'DeepSeek V3 (via OpenRouter)' },
-                { value: 'google/gemini-flash-1.5', label: 'Gemini 1.5 Flash' }
+                { value: 'google/gemini-3.5-flash', label: 'Gemini 3.5 Flash' },
+                { value: 'google/gemini-2.5-flash', label: 'Gemini 2.5 Flash' }
             ],
             groq: [
                 { value: 'llama-3.3-70b-specdec', label: 'Llama 3.3 70B (Fast SpecDec)' },
@@ -1211,6 +1216,18 @@ HTML_CONTENT = """<!DOCTYPE html>
                 { value: 'Qwen/Qwen2.5-72B-Instruct', label: 'Qwen 2.5 72B' },
                 { value: 'meta-llama/Meta-Llama-3.3-70B-Instruct', label: 'Llama 3.3 70B' },
                 { value: 'meta-llama/Meta-Llama-3.1-8B-Instruct', label: 'Llama 3.1 8B' }
+            ],
+            gemini: [
+                { value: 'gemini-3.5-flash', label: 'Gemini 3.5 Flash (Recommended)' },
+                { value: 'gemini-3.1-pro', label: 'Gemini 3.1 Pro (Reasoning)' },
+                { value: 'gemini-3.1-flash-lite', label: 'Gemini 3.1 Flash-Lite' },
+                { value: 'gemini-2.5-flash', label: 'Gemini 2.5 Flash' },
+                { value: 'gemini-2.5-pro', label: 'Gemini 2.5 Pro' }
+            ],
+            dashscope: [
+                { value: 'qwen-plus', label: 'Qwen Plus (Balanced)' },
+                { value: 'qwen-max', label: 'Qwen Max (High Reasoning)' },
+                { value: 'qwen-turbo', label: 'Qwen Turbo (Fast)' }
             ],
             ollama: [
                 { value: 'llama3', label: 'Llama 3' },
@@ -1269,6 +1286,8 @@ HTML_CONTENT = """<!DOCTYPE html>
                     groq: currentConfig.env.GROQ_API_KEY || '',
                     nebius: currentConfig.env.NEBIUS_API_KEY || '',
                     deepinfra: currentConfig.env.DEEPINFRA_API_KEY || '',
+                    gemini: currentConfig.env.GEMINI_API_KEY || '',
+                    dashscope: currentConfig.env.DASHSCOPE_API_KEY || '',
                     ollama: ''
                 };
                 const keyInput = document.getElementById('env-apikey');
@@ -1320,6 +1339,8 @@ HTML_CONTENT = """<!DOCTYPE html>
                     groq: data.env.GROQ_API_KEY || '',
                     nebius: data.env.NEBIUS_API_KEY || '',
                     deepinfra: data.env.DEEPINFRA_API_KEY || '',
+                    gemini: data.env.GEMINI_API_KEY || '',
+                    dashscope: data.env.DASHSCOPE_API_KEY || '',
                     ollama: ''
                 };
                 const keyInput = document.getElementById('env-apikey');
@@ -1387,6 +1408,10 @@ HTML_CONTENT = """<!DOCTYPE html>
                     updatedEnv.NEBIUS_API_KEY = apiKey;
                 } else if (provider === 'deepinfra') {
                     updatedEnv.DEEPINFRA_API_KEY = apiKey;
+                } else if (provider === 'gemini') {
+                    updatedEnv.GEMINI_API_KEY = apiKey;
+                } else if (provider === 'dashscope') {
+                    updatedEnv.DASHSCOPE_API_KEY = apiKey;
                 }
 
                 const response = await fetch('/api/config', {
