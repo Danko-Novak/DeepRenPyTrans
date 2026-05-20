@@ -151,7 +151,7 @@ target_language: "Portuguese"
 translation_dir: "portuguese"
 
 api:
-  provider: "deepseek"    # ou "openai", "ollama"
+  provider: "deepseek"    # ou "openai", "openrouter", "groq", "nebius", "deepinfra", "gemini", "dashscope", "ollama"
   model: "deepseek-chat"  # suporta novos modelos deepseek-v4-flash / deepseek-v4-pro
   temperature: 0.2
   batch_size: 40
@@ -173,6 +173,10 @@ DEEPSEEK_API_KEY=sk-sua-chave-aqui
 # ou
 OPENAI_API_KEY=sk-sua-chave-openai-aqui
 ```
+
+> [!NOTE]
+> O suporte para modelos locais (Ollama) e provedores de API alternativos (OpenAI, OpenRouter, Groq, Nebius, DeepInfra, Gemini, DashScope) além do DeepSeek é atualmente nominal. A ferramenta foi otimizada originalmente para o DeepSeek, e as outras integrações foram implementadas seguindo os padrões oficiais da API OpenAI sem testes exaustivos. A lista de provedores e chaves totalmente verificados será expandida em atualizações futuras.
+
 
 ## 🏗️ Como Funciona
 

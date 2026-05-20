@@ -151,7 +151,7 @@ target_language: "Chinese"
 translation_dir: "chinese"
 
 api:
-  provider: "deepseek"    # 或 "openai", "ollama"
+  provider: "deepseek"    # 或 "openai", "openrouter", "groq", "nebius", "deepinfra", "gemini", "dashscope", "ollama"
   model: "deepseek-chat"  # 支持最新的 deepseek-v4-flash / deepseek-v4-pro
   temperature: 0.2
   batch_size: 40
@@ -173,6 +173,10 @@ DEEPSEEK_API_KEY=sk-your-key-here
 # 或
 OPENAI_API_KEY=sk-your-openai-key
 ```
+
+> [!NOTE]
+> 除 DeepSeek 外，对本地模型 (Ollama) 和其他 API 提供商 (OpenAI, OpenRouter, Groq, Nebius, DeepInfra, Gemini, DashScope) 的支持目前是名义上的（未完全测试）。本项目最初是针对 DeepSeek 进行优化的，其他集成是根据官方 OpenAI API 标准实现的，未经详尽测试。未来更新中将逐步扩大完全验证的提供商和密钥列表。
+
 
 ## 🏗️ 工作原理
 

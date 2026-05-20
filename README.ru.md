@@ -154,7 +154,7 @@ target_language: "Russian"
 translation_dir: "russian"
 
 api:
-  provider: "deepseek"    # или "openai", "ollama"
+  provider: "deepseek"    # или "openai", "openrouter", "groq", "nebius", "deepinfra", "gemini", "dashscope", "ollama"
   model: "deepseek-chat"  # поддерживает новые deepseek-v4-flash / deepseek-v4-pro
   temperature: 0.2
   batch_size: 40
@@ -176,6 +176,10 @@ DEEPSEEK_API_KEY=sk-your-key-here
 # или
 OPENAI_API_KEY=sk-your-openai-key
 ```
+
+> [!NOTE]
+> Поддержка локальных моделей (Ollama) и других API-провайдеров (OpenAI, OpenRouter, Groq, Nebius, DeepInfra, Gemini, DashScope), кроме DeepSeek, является номинальной. Проект разрабатывался под DeepSeek, а остальные интеграции сделаны по стандартам OpenAI API без глубокого практического тестирования. В будущем, по мере возможности, список протестированных ключей будет расширяться.
+
 
 ## 🏗️ Как это работает
 
