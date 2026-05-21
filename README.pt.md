@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.png" alt="DeepRenPyTrans Logo" width="250">
+</p>
+
 # 🎮 DeepRenPyTrans
 
 **Tradutor universal para visual novels Ren'Py baseado em Inteligência Artificial.**

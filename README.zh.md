@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/logo.png" alt="DeepRenPyTrans Logo" width="250">
+</p>
+
 # 🎮 DeepRenPyTrans
 
 **基于人工智能的 Ren'Py 视觉小说游戏通用自动翻译工具。**
