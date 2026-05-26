@@ -67,6 +67,6 @@ extraction:
 # --- Hooks Generation ---
 hooks:
   # Hotkey to toggle translation on/off at runtime
-  toggle_hotkey: "l"
+  toggle_hotkey: "ctrl_alt_t"
   # Auto-set language on first run
   auto_set_language: true

@@ -34,7 +34,7 @@ DEFAULTS = {
         "min_length": 2,
     },
     "hooks": {
-        "toggle_hotkey": "l",
+        "toggle_hotkey": "ctrl_alt_t",
         "auto_set_language": True,
     },
 }

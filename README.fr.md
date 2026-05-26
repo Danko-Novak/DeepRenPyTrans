@@ -55,10 +55,16 @@ cp config.example.yaml config.yaml
 Vous pouvez lancer l'outil de deux manières :
 
 #### Option A : Interface Graphique Web (Recommandé)
-Démarrez le serveur web local et utilisez l'interface dans votre navigateur pour gérer les paramètres, modifier les flags de build et exécuter les tâches :
-```bash
-python gui_server.py
-```
+Vous pouvez démarrer la console de trois manières :
+- Sous Windows : Double-cliquez sur le fichier `run_gui.bat` dans le dossier racine du projet.
+- Sous Linux/macOS : Exécutez le script shell :
+  ```bash
+  ./run_gui.sh
+  ```
+- Ou exécutez-le manuellement dans votre terminal :
+  ```bash
+  python3 gui_server.py
+  ```
 Cela ouvrira automatiquement votre navigateur à l'adresse `http://localhost:8000`.
 
 #### Option B : Interface en ligne de commande (CLI)
@@ -206,13 +212,13 @@ OPENAI_API_KEY=sk-votre-cle-openai-ici
 ## 📱 Déploiement Mobile
 
 ### Android (Injection APK)
-1. Utilisez notre script automatisé `build_apk.bat` qui gère tout le processus :
+1. Utilisez notre script de build automatisé (`build_apk.bat` pour Windows, ou `android/build_apk.sh` pour Linux/macOS) qui gère tout le processus :
    - Extrait les ressources du jeu de l'ancien APK.
    - Restaure les ressources déjà compressées de l'APK d'origine pour économiser jusqu'à 60 % de la taille totale (économie moyenne de ~400-500 Mo).
    - Effectue la compression audio wav en ogg.
    - Optimise les nouvelles images pour mobiles tout en ignorant les ressources déjà compressées.
    - Compresse l'APK en utilisant la compression ultra et le signe automatiquement.
-2. **Personnalisation** : Vous pouvez personnaliser le processus de build en modifiant les variables (flags) situées en haut de `build_apk.bat` :
+2. **Personnalisation** : Vous pouvez personnaliser le processus de build en modifiant les variables (flags) situées en haut du script de build (`build_apk.bat` ou `android/build_apk.sh`) :
    - `RESTORE_OLD_ASSETS` (1/0) : Activer/Désactiver la restauration des ressources déjà compressées de l'ancien APK.
    - `COMPRESS_AUDIO` (1/0) : Activer/Désactiver la conversion de wav en ogg et la mise à jour des scripts.
    - `COMPRESS_IMAGES` (1/0) : Activer/Désactiver la compression des nouvelles images.
@@ -248,7 +254,7 @@ Nous suivons notre développement, planifions de nouvelles fonctionnalités et p
 | **Console Web GUI (Tableau de Bord)** | - | 🚀 Publié | `[████████████████████]` 100% |
 | **Optimisateur et Assembleur d'APK** | - | 🚀 Publié | `[████████████████████]` 100% |
 | **Prise en Charge des LLM Locaux et d'Ollama** | - | 🚀 Publié | `[████████████████████]` 100% |
-| **Prise en Charge de macOS et Linux** | 0 | 📋 Planifié | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Prise en Charge de macOS et Linux** | - | 🚀 Publié | `[████████████████████]` 100% |
 | **Audits de Traduction Japonaise/Chinoise** | 0 | 📋 Planifié | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
 
 ---

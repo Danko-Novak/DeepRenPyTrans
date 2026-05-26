@@ -55,11 +55,15 @@ cp config.example.yaml config.yaml
 You can run the tool in two ways:
 
 #### Option A: Web Console GUI (Recommended)
-You can start the console in two ways:
-- Simply double-click the `run_gui.bat` file in the project's root folder.
+You can start the console in three ways:
+- On Windows: Double-click the `run_gui.bat` file in the project's root folder.
+- On Linux/macOS: Run the shell script:
+  ```bash
+  ./run_gui.sh
+  ```
 - Or execute manually in your terminal:
   ```bash
-  python gui_server.py
+  python3 gui_server.py
   ```
 This automatically opens your browser at `http://localhost:8000`.
 
@@ -209,13 +213,13 @@ OPENAI_API_KEY=sk-your-openai-key
 ## 📱 Mobile Deployment
 
 ### Android (APK Injection)
-1. Use our automated script `build_apk.bat` which handles everything:
+1. Use our automated build script (`build_apk.bat` for Windows, or `android/build_apk.sh` for Linux/macOS) which handles everything:
    - Extracting game assets from the old APK.
    - Restoring compressed assets from the old APK to save up to 60% of size (averaging ~400-500MB savings).
    - Performing wav-to-ogg audio compression.
    - Optimizing new images for mobile while skipping already compressed assets.
    - Repacking the APK using ultra-compression and signing it automatically.
-2. **Customization**: You can customize the build process by editing the flags at the top of `build_apk.bat`:
+2. **Customization**: You can customize the build process by editing the flags at the top of the build script (`build_apk.bat` or `android/build_apk.sh`):
    - `RESTORE_OLD_ASSETS` (1/0): Enable/disable restoring already compressed assets from the old APK.
    - `COMPRESS_AUDIO` (1/0): Enable/disable wav-to-ogg conversion and script patching.
    - `COMPRESS_IMAGES` (1/0): Enable/disable mobile image compression.
@@ -250,7 +254,7 @@ We track our development, plan new features, and prioritize tasks based on commu
 | **GUI Web Console (Dashboard)** | - | 🚀 Released | `[████████████████████]` 100% |
 | **Android APK Packer & Optimizer** | - | 🚀 Released | `[████████████████████]` 100% |
 | **Local LLMs & Ollama Support** | - | 🚀 Released | `[████████████████████]` 100% |
-| **macOS & Linux Support** | 0 | 📋 Planned | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **macOS & Linux Support** | - | 🚀 Released | `[████████████████████]` 100% |
 | **Japanese/Chinese Translation Audits** | 0 | 📋 Planned | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
 
 ---

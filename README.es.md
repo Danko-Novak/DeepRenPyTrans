@@ -55,10 +55,16 @@ cp config.example.yaml config.yaml
 Puedes ejecutar la herramienta de dos maneras:
 
 #### Opción A: Interfaz Gráfica Web (Recomendado)
-Inicia el servidor web local y utiliza la interfaz para gestionar configuraciones, alternar flags de compilación y ejecutar tareas:
-```bash
-python gui_server.py
-```
+Puedes iniciar la consola de tres maneras:
+- En Windows: Haz doble clic en el archivo `run_gui.bat` en la carpeta raíz del proyecto.
+- En Linux/macOS: Ejecuta el script de shell:
+  ```bash
+  ./run_gui.sh
+  ```
+- O ejecútalo manualmente en tu terminal:
+  ```bash
+  python3 gui_server.py
+  ```
 Esto abrirá automáticamente tu navegador en `http://localhost:8000`.
 
 #### Opción B: Interfaz de Línea de Comandos (CLI)
@@ -206,13 +212,13 @@ OPENAI_API_KEY=sk-tu-clave-openai-aqui
 ## 📱 Despliegue en Dispositivos Móviles
 
 ### Android (Inyección en APK)
-1. Utiliza nuestro script automatizado `build_apk.bat` que realiza todo el proceso:
+1. Utiliza nuestro script de construcción automatizado (`build_apk.bat` para Windows, o `android/build_apk.sh` para Linux/macOS) que realiza todo el proceso:
    - Extrae los recursos del juego del APK antiguo.
    - Restaura los recursos ya comprimidos del APK original para ahorrar hasta un 60% del tamaño total (ahorro promedio de ~400-500 MB).
    - Realiza compresión de audio wav a ogg.
    - Optimiza las nuevas imágenes para móviles omitiendo las que ya estaban comprimidas.
    - Empaqueta el APK usando compresión ultra y lo firma de forma automática.
-2. **Personalización**: Puedes personalizar el proceso de compilación editando las variables (flags) en la parte superior de `build_apk.bat`:
+2. **Personalización**: Puedes personalizar el proceso de compilación editando las variables (flags) en la parte superior del script de construcción (`build_apk.bat` o `android/build_apk.sh`):
    - `RESTORE_OLD_ASSETS` (1/0): Habilitar/deshabilitar la restauración de recursos ya comprimidos del APK original.
    - `COMPRESS_AUDIO` (1/0): Habilitar/deshabilitar la conversión de wav a ogg y el parcheo de scripts.
    - `COMPRESS_IMAGES` (1/0): Habilitar/deshabilitar la compresión de nuevas imágenes.
@@ -247,7 +253,7 @@ Realizamos el seguimiento del desarrollo, planeamos nuevas funciones y priorizam
 | **Consola Web GUI (Dashboard)** | - | 🚀 Lanzado | `[████████████████████]` 100% |
 | **Empaquetador y Optimizador de APK** | - | 🚀 Lanzado | `[████████████████████]` 100% |
 | **Soporte para LLMs Locales y Ollama** | - | 🚀 Lanzado | `[████████████████████]` 100% |
-| **Soporte para macOS y Linux** | 0 | 📋 Planificado | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **Soporte para macOS y Linux** | - | 🚀 Lanzado | `[████████████████████]` 100% |
 | **Auditorías de Traducción CJK** | 0 | 📋 Planificado | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
 
 ---

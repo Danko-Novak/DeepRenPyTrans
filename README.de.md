@@ -55,10 +55,16 @@ cp config.example.yaml config.yaml
 Sie können das Tool auf zwei Arten ausführen:
 
 #### Option A: Web-Konsole GUI (Empfohlen)
-Starten Sie den lokalen Webserver und nutzen Sie die Benutzeroberfläche im Browser, um Einstellungen zu verwalten, Build-Flags zu ändern und Aufgaben auszuführen:
-```bash
-python gui_server.py
-```
+Sie können die Konsole auf drei Arten starten:
+- Unter Windows: Doppelklicken Sie auf die Datei `run_gui.bat` im Stammordner des Projekts.
+- Unter Linux/macOS: Führen Sie das Shell-Skript aus:
+  ```bash
+  ./run_gui.sh
+  ```
+- Oder führen Sie es manuell in Ihrem Terminal aus:
+  ```bash
+  python3 gui_server.py
+  ```
 Dies öffnet automatisch Ihren Browser unter `http://localhost:8000`.
 
 #### Option B: Befehlszeilenschnittstelle (CLI)
@@ -206,13 +212,13 @@ OPENAI_API_KEY=sk-ihr-openai-schluessel
 ## 📱 Mobile Bereitstellung
 
 ### Android (APK-Injektion)
-1. Verwenden Sie unser automatisiertes Skript `build_apk.bat`, das alle Schritte übernimmt:
+1. Verwenden Sie unser automatisiertes Build-Skript (`build_apk.bat` für Windows oder `android/build_apk.sh` für Linux/macOS), das alle Schritte übernimmt:
    - Extraktion der Spieldateien aus der alten APK.
    - Wiederherstellung bereits komprimierter Ressourcen aus der Original-APK, um bis zu 60 % der Größe einzusparen (im Durchschnitt ~400-500 MB Ersparnis).
    - Durchführung von wav-zu-ogg Audiokompression.
    - Optimierung neuer Bilder für Mobilgeräte unter Überspringung bereits komprimierter Ressourcen.
    - Packen der APK mit Ultra-Komprimierung und automatische Signierung.
-2. **Anpassung**: Sie können den Erstellungsprozess anpassen, indem Sie die Flags oben in `build_apk.bat` bearbeiten:
+2. **Anpassung**: Sie können den Erstellungsprozess anpassen, indem Sie die Flags oben im Build-Skript (`build_apk.bat` oder `android/build_apk.sh`) bearbeiten:
    - `RESTORE_OLD_ASSETS` (1/0): Aktivieren/Deaktivieren der Wiederherstellung bereits komprimierter Ressourcen aus der alten APK.
    - `COMPRESS_AUDIO` (1/0): Aktivieren/Deaktivieren der wav-zu-ogg-Konvertierung und Skriptanpassung.
    - `COMPRESS_IMAGES` (1/0): Aktivieren/Deaktivieren der Komprimierung neuer Bilder.
@@ -248,7 +254,7 @@ Wir verfolgen unsere Entwicklung, planen neue Funktionen und priorisieren Aufgab
 | **Web-GUI-Konsole (Dashboard)** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
 | **Android APK Packer & Optimierer** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
 | **Lokale LLMs & Ollama-Unterstützung** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
-| **macOS- & Linux-Unterstützung** | 0 | 📋 Geplant | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **macOS- & Linux-Unterstützung** | - | 🚀 Veröffentlicht | `[████████████████████]` 100% |
 | **Übersetzungsprüfungen für Japanisch/Chinesisch** | 0 | 📋 Geplant | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
 
 ---

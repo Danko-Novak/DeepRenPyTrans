@@ -27,7 +27,7 @@ init -1 python:
         renpy.run(Language(lang))
 
     config.underlay.append(
-        renpy.Keymap({hotkey}=_deeprenpytrans_toggle, {hotkey_upper}=_deeprenpytrans_toggle)
+        renpy.Keymap({keymap_args})
     )
 
     class _DeepTranslator(object):
@@ -121,7 +121,7 @@ init 5 python:
 def generate_hooks(
     output_dir: str,
     lang_dir: str = "russian",
-    hotkey: str = "l",
+    hotkey: str = "ctrl_alt_t",
     default_font: str = "DejaVuSans.ttf",
     font_replacements: dict = None,
     verbose: bool = False,
@@ -147,10 +147,15 @@ def generate_hooks(
             font_lines += f'        if renpy.exists("{replacement}"):\n'
             font_lines += f'            config.font_replacement_map["{original}"] = ("{replacement}", False, False)\n'
 
+    if len(hotkey) == 1:
+        keymap_args = f"{hotkey}=_deeprenpytrans_toggle, {hotkey.upper()}=_deeprenpytrans_toggle"
+    else:
+        keymap_args = f"{hotkey}=_deeprenpytrans_toggle"
+
     content = HOOKS_TEMPLATE.format(
         lang_dir=lang_dir,
         hotkey=hotkey,
-        hotkey_upper=hotkey.upper(),
+        keymap_args=keymap_args,
         default_font=default_font,
         font_replacements=font_lines,
     )

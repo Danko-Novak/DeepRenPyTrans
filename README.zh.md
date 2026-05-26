@@ -55,10 +55,16 @@ cp config.example.yaml config.yaml
 您可以通过以下两种方式运行该工具：
 
 #### 方法 A：Web 可视化控制台 (推荐)
-启动本地 Web 服务器，在浏览器中使用高级玻璃质感界面管理设置、切换打包标志并执行所有操作：
-```bash
-python gui_server.py
-```
+您可以通过以下三种方式启动控制台：
+- Windows 系统：双击项目根目录下的 `run_gui.bat` 文件。
+- Linux/macOS 系统：运行 Shell 脚本：
+  ```bash
+  ./run_gui.sh
+  ```
+- 或者在终端中手动执行：
+  ```bash
+  python3 gui_server.py
+  ```
 程序会自动在浏览器中打开 `http://localhost:8000`。
 
 #### 方法 B：命令行界面 (CLI)
@@ -206,13 +212,13 @@ OPENAI_API_KEY=sk-your-openai-key
 ## 📱 移动端部署
 
 ### Android (APK 自动打包注入)
-1. 使用我们提供的自动化脚本 `build_apk.bat`，它将自动完成所有工作：
+1. 使用我们提供的自动化构建脚本（Windows 系统使用 `build_apk.bat`，Linux/macOS 系统使用 `android/build_apk.sh`），它将自动完成所有工作：
    - 自动解压老版本 APK 游戏包。
    - 自动恢复原 APK 中的压缩资源，最多可缩减 60% 的包体体积（平均节省 400-500 MB 空间）。
    - 自动将音频文件进行 wav 至 ogg 压缩。
    - 自动优化新图片资源，跳过已缩减的原图。
    - 使用 7z 最高压缩率重新封包并进行自动签名。
-2. **自定义参数构建**：您可以通过修改 `build_apk.bat` 文件头部的配置标志（Flags）来自定义构建行为：
+2. **自定义参数构建**：您可以通过修改构建脚本（`build_apk.bat` 或 `android/build_apk.sh`）文件头部的配置标志（Flags）来自定义构建行为：
    - `RESTORE_OLD_ASSETS` (1/0)：开启/关闭从旧 APK 恢复已压缩资产的功能。
    - `COMPRESS_AUDIO` (1/0)：开启/关闭音频 wav-to-ogg 转换及脚本路径自动修正。
    - `COMPRESS_IMAGES` (1/0)：开启/关闭新图片资源的优化压缩。
@@ -248,7 +254,7 @@ OPENAI_API_KEY=sk-your-openai-key
 | **GUI Web 仪表盘控制台** | - | 🚀 已发布 | `[████████████████████]` 100% |
 | **Android APK 封包与优化器** | - | 🚀 已发布 | `[████████████████████]` 100% |
 | **本地大模型与 Ollama 支持** | - | 🚀 已发布 | `[████████████████████]` 100% |
-| **macOS & Linux 运行支持** | 0 | 📋 规划中 | `[██░░░░░░░░░░░░░░░░░░]` 10% |
+| **macOS & Linux 运行支持** | - | 🚀 已发布 | `[████████████████████]` 100% |
 | **中日韩（CJK）翻译质量校验** | 0 | 📋 规划中 | `[█░░░░░░░░░░░░░░░░░░░]` 5% |
 
 ---
