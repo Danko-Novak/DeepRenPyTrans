@@ -233,6 +233,26 @@ class GUIRequestHandler(BaseHTTPRequestHandler):
             self.send_header("Content-Type", "text/html; charset=utf-8")
             self.end_headers()
             self.wfile.write(HTML_CONTENT.encode("utf-8"))
+        elif self.path in ["/logo.webp", "/logo.png"]:
+            logo_path = None
+            for p in [
+                os.path.join(ROOT_DIR, "docs", "logo.webp"),
+                os.path.join(ROOT_DIR, "logo.png"),
+                os.path.join(PARENT_DIR, "docs", "logo.webp"),
+                os.path.join(PARENT_DIR, "logo.png")
+            ]:
+                if os.path.exists(p) and p.endswith(self.path[1:]):
+                    logo_path = p
+                    break
+            if logo_path:
+                self.send_response(200)
+                mime = "image/webp" if logo_path.endswith(".webp") else "image/png"
+                self.send_header("Content-Type", mime)
+                self.end_headers()
+                with open(logo_path, "rb") as f:
+                    self.wfile.write(f.read())
+            else:
+                self.send_error(404, "Logo Not Found")
         elif self.path == "/api/config":
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
@@ -893,8 +913,8 @@ HTML_CONTENT = """<!DOCTYPE html>
     <!-- Sidebar Navigation -->
     <aside>
         <div class="logo-area">
-            <span style="font-size: 24px;">🎮</span>
-            <h2>DeepRenPyTrans</h2>
+            <img src="/logo.webp" alt="DeepRenPyTrans Logo" style="height: 38px; border-radius: 6px;" onerror="this.src='/logo.png'; this.onerror=null;">
+            <h2 style="font-size: 18px;">DeepRenPyTrans</h2>
         </div>
 
         <div class="menu-items">

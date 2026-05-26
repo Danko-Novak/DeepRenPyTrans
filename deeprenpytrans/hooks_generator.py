@@ -115,6 +115,60 @@ init 5 python:
             gui.choice_button_text_font = _font_to_use
             style.default.font = _font_to_use
 {font_replacements}
+
+    # Overlay hooks for splash screen and watermark
+    _deeprenpytrans_splash_shown = False
+
+    def _deeprenpytrans_overlay_hook():
+        global _deeprenpytrans_splash_shown
+        if _preferences.language != "{lang_dir}":
+            if renpy.get_screen("deeprenpytrans_watermark"):
+                renpy.hide_screen("deeprenpytrans_watermark")
+            return
+
+        # Show splash screen once per game session when main menu loads
+        if renpy.get_screen("main_menu") and not _deeprenpytrans_splash_shown:
+            _deeprenpytrans_splash_shown = True
+            renpy.show_screen("deeprenpytrans_splash")
+
+        # Show watermark on main menu
+        if renpy.get_screen("main_menu"):
+            if not renpy.get_screen("deeprenpytrans_watermark"):
+                renpy.show_screen("deeprenpytrans_watermark")
+        else:
+            if renpy.get_screen("deeprenpytrans_watermark"):
+                renpy.hide_screen("deeprenpytrans_watermark")
+
+    config.overlay_functions.append(_deeprenpytrans_overlay_hook)
+
+# --- Splash & Watermark Screen Definitions ---
+screen deeprenpytrans_splash:
+    zorder 999999
+    modal True
+    
+    # Dark background
+    add Solid("#0b071e")
+    
+    vbox:
+        align (0.5, 0.5)
+        spacing 25
+        
+        # Display logo if exists
+        if renpy.exists("tl/{lang_dir}/logo.webp"):
+            add "tl/{lang_dir}/logo.webp" xalign 0.5 maxy 300
+        elif renpy.exists("tl/{lang_dir}/logo.png"):
+            add "tl/{lang_dir}/logo.png" xalign 0.5 maxy 300
+        else:
+            text "🎮" size 80 xalign 0.5
+            
+        text "Перевод подготовлен с помощью\\nDeepRenPyTrans" size 24 color "#ffffff" text_align 0.5 xalign 0.5
+        text "DeepRenPyTrans (https://github.com/Danko-Novak/DeepRenPyTrans)" size 12 color "#a09cb0" xalign 0.5
+        
+    timer 2.5 action Hide("deeprenpytrans_splash", transition=dissolve)
+
+screen deeprenpytrans_watermark:
+    zorder 1000
+    text "Перевод: DeepRenPyTrans" size 10 color "#ffffff50" align (0.99, 0.99)
 '''
 
 
@@ -146,6 +200,34 @@ def generate_hooks(
         for original, replacement in font_replacements.items():
             font_lines += f'        if renpy.exists("{replacement}"):\n'
             font_lines += f'            config.font_replacement_map["{original}"] = ("{replacement}", False, False)\n'
+
+    # Copy logo.webp or logo.png to the target folder
+    import shutil
+    logo_src = None
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    possible_logo_paths = [
+        os.path.join(current_dir, "..", "docs", "logo.webp"),
+        os.path.join(current_dir, "..", "logo.png"),
+        os.path.join(os.getcwd(), "docs", "logo.webp"),
+        os.path.join(os.getcwd(), "logo.png"),
+    ]
+    for p in possible_logo_paths:
+        if os.path.exists(p):
+            logo_src = p
+            break
+
+    if logo_src:
+        ext = os.path.splitext(logo_src)[1]
+        dest_filename = f"logo{ext}"
+        dest_path = os.path.join(output_dir, dest_filename)
+        try:
+            os.makedirs(output_dir, exist_ok=True)
+            shutil.copy2(logo_src, dest_path)
+            if verbose:
+                print(f"✨ Copied logo to: {dest_path}")
+        except Exception as e:
+            if verbose:
+                print(f"⚠️ Failed to copy logo: {e}")
 
     if len(hotkey) == 1:
         keymap_args = f"{hotkey}=_deeprenpytrans_toggle, {hotkey.upper()}=_deeprenpytrans_toggle"
